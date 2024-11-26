@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">
+            <i class="fas fa-snake snake-icon"></i> Snake Game
+        </h1>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div id="scoreboard" class="text-center">Score: 0</div>
+        <div id="bigFoodTimer" class="text-center" style="font-size: 20px; color: red;"></div>
+        <button id="startButton" class="btn btn-primary" onclick="startGame()">Start Game</button>
+    </div>
+    <footer class="text-center" style="margin-top: 20px;">
+        <p>&copy; 2024 Snake Game. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

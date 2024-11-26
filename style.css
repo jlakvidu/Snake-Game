@@ -1,0 +1,161 @@
+body {
+    background: linear-gradient(270deg, #a8e6cf, #dcedc1, #ffccbc, #ffab91);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+canvas {
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+}
+
+#scoreboard {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+#bigFoodTimer {
+    font-size: 20px;
+    color: red;
+    margin-top: 10px;
+}
+
+.snake-icon {
+    font-size: 40px; 
+    margin-right: 10px; 
+    animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ffc3, #a2d4c5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: glow 1.5s infinite alternate;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.7);
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 5px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 2px 2px 5px rgba(0, 255, 0, 0.7), 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7);
+    }
+}
+
+h1 {
+    font-weight: bold;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 255, 187, 0.5);
+    animation: bounce 1.5s infinite, underline 1.5s infinite;
+    text-decoration: none;
+}
+
+@keyframes underline {
+    0%, 100% {
+        text-decoration: none;
+    }
+    50% {
+        text-decoration: underline;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    #scoreboard, #bigFoodTimer {
+        font-size: 18px; 
+    }
+
+    .btn {
+        font-size: 16px; 
+        padding: 8px 16px; 
+    }
+
+    h1 {
+        font-size: 28px; 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; 
+    }
+
+    canvas {
+        width: 100%;
+        height: auto; 
+    }
+}
